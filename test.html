@@ -1,0 +1,1082 @@
+<html lang="en" class=""><head><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}
+</style><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}
+</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style><script src="//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js"></script><script src="//static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js"></script><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico"><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111"><link rel="canonical" href="https://codepen.io/eevu/pen/eZPmre?limit=all&amp;page=2&amp;q=portfolio">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Muli:300|Raleway:300,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"><link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<style class="cp-pen-styles">/* Resets */
+html, 
+body,
+nav,
+p,
+ul,
+ul li,
+.nav > li > a,
+.social-btns > li > a, 
+form,
+textarea {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 400px;
+  height: 198px;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  color: inherit;
+  text-decoration: none !important;
+  background: none !important;
+  outline: none;
+}
+
+button,
+button:active, 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+button,
+button:active,
+input,
+textarea {
+  outline: none;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+/* Bootstrap Changes */
+.container {
+  max-width: 1100px;
+}
+
+@media (min-width: 520px) and (max-width: 767px) {
+  .container {
+    width: 500px;
+  }
+} 
+
+.nav > .header__nav__item > a:hover {
+  background: none;
+}
+.nav > .header__nav__item > a {
+  display: inline;
+}
+
+/* Generic Styles & Utility */
+ 
+.js-dis {
+  display: none;
+}
+
+.text-bold {
+  font-family: 'Raleway';
+  font-weight: 700;
+}
+
+a.global-button,
+.global-button,
+.heading,
+.header__nav {
+  font-size: 1.7em;
+  font-family: 'Raleway', sans-serif;
+}
+
+a.global-button,
+.global-button,
+.heading {
+  text-transform: uppercase;
+  color: #51e6a6;
+}
+
+.heading {
+  margin: 0;
+  margin-bottom: 2em;
+}
+
+.header__social-btns > li > a:hover,
+.filters__label:hover {
+  color: #51e6a6;
+}
+
+.header__social-btns > li > a,
+.filters__label,
+.credit-link {
+  -webkit-transition: all 250ms linear;
+  transition: all 250ms linear;
+}
+
+.global-button::before {
+  content:"";
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  position: relative;
+  top: .2em; bottom: 0;
+  background: url('https://eevu.github.io/img/arrow.svg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.global-button.rotated::before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  left: -.5em;
+}
+
+/* ----- Page ----- */
+html, 
+body {
+  font-size: 100%;
+  font-family: 'Muli', sans-serif;
+  color: #6c6753;
+}
+
+/*** Header ***/
+
+.header {
+  padding: 1.5em 6% 1em;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+
+@media (min-width: 920px) {
+  .header {
+    padding-left: 6em;
+    padding-right: 6em;
+  } 
+}
+
+/* Nav */
+
+.header__nav,
+.header__social-btns {
+  display: inline-block;
+  margin-right: -4px;   /* solves inline-block whitespace issue */
+  width: 50%;
+  vertical-align: baseline;
+}
+
+.header__nav {
+  line-height: .9em;
+}
+
+.header__nav__item > a {
+  position: relative;
+}
+
+.header__nav__item.is-active > a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.header__nav__item.is-active > a:hover {
+  color: currentColor;
+}
+
+.header__nav__item > a,
+.header__nav__item > a::before {
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+
+.header__nav__item > a:hover {
+  color: #51e6a6;
+}
+
+.header__nav__item > a::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: visible;
+  left: -7em;
+}
+
+@media (max-width: 919px) {
+  .header__nav__item > a::before {
+    display: none;
+  }
+}
+
+.header__nav__item > a[data-ref='about']::before {
+  content:url('https://eevu.github.io/img/about_icon.svg');
+}
+
+.header__nav__item > a[data-ref='portfolio']::before {
+  content:url('https://eevu.github.io/img/portfolio_icon.svg');
+}
+
+.header__nav__item > a[data-ref='contact']::before {
+  content:url('https://eevu.github.io/img/contact_icon.svg');
+}
+
+.header__nav__item > a:hover::before,
+.header__nav__item.is-active > a::before {
+  left: -2.5em;
+}
+
+/* Collapsible Navigation */
+.nav-toggle-wrapper {
+  display: none;
+  height: 2em;
+}
+
+.nav-toggle-btn {
+  display: inline;
+  position: relative;
+  height: 2em;
+  width: 2em;
+  cursor: pointer;
+}
+
+.nav-toggle-btn > .line {
+  display: block;
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: .25em;
+  background-color: #6c6753;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.nav-toggle-btn > .line:first-child {
+  -webkit-transform: translateY(-250%);
+          transform: translateY(-250%);
+}
+
+.nav-toggle-btn > .line:last-child {
+  -webkit-transform: translateY(150%);
+          transform: translateY(150%);
+}
+
+/* icon animations */
+ 
+.nav-toggle-btn:hover > .line:first-child {
+  -webkit-transform: translateY(-300%);
+          transform: translateY(-300%);
+}
+.nav-toggle-btn:hover > .line:last-child {
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+}
+
+/* change icon appearance on expanded nav */
+.nav-toggle-wrapper.expand > .nav-toggle-btn > .line:first-child {
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+}
+
+.nav-toggle-wrapper.expand > .nav-toggle-btn > .line:nth-child(2) {
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+}
+
+.nav-toggle-wrapper.expand > .nav-toggle-btn > .line:last-child {
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .header__nav {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 2em; left: 0;
+    height: calc(100vh - 2em);
+    width: 100%;
+    text-align: center;
+    line-height: 1.5em;
+    background-color: #fff;
+    padding-bottom: 2em;
+    overflow: hidden;
+    -webkit-transition: opacity 400ms ease-out;
+    transition: opacity 400ms ease-out;
+  }
+  
+  .nav-toggle-wrapper {
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+  }
+  
+  .nav-toggle-wrapper.expand + .header__nav {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .header__nav > .nav {
+    position: absolute;
+    top: calc(50% - 2em); left: 0;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+
+/* Social Links */
+
+.header__social-btns {
+  text-align: right;
+}
+
+.header__social-btns > li {
+  display: inline-block;
+}
+
+.header__social-btns > li > a {
+  position: relative;
+  padding: 5px;
+}
+
+
+/* --- Sections --- */
+
+#about,
+#portfolio,
+#contact {
+  padding-top: 8.5em;
+}
+
+
+/*** About Section ***/
+#about { 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: flex;
+  min-height: 100vh;
+}
+
+#about .wrapper {
+  max-width: 80%;
+  margin: auto;
+  margin-right: 10%
+}
+@media (min-width: 768px) {
+  #about .wrapper {
+    margin-right: 24%;
+  }
+}
+
+.about__intro {
+  border-left: 2px solid;
+  padding-left: 2.2em;
+  margin-bottom: 1em;
+  max-width: 25em;
+}
+
+#about:hover .global-button.rotated::before {
+  -webkit-animation: move_arrow_v 2500ms ease-in infinite forwards;
+          animation: move_arrow_v 2500ms ease-in infinite forwards;
+}
+
+@-webkit-keyframes move_arrow_v {
+  0% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  50% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  60% {
+    -webkit-transform: rotate(90deg) translateX(8px);
+            transform: rotate(90deg) translateX(8px);
+  }
+  70% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  80% {
+    -webkit-transform: rotate(90deg) translateX(8px);
+            transform: rotate(90deg) translateX(8px);
+  }
+  90% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  100% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+}
+
+@keyframes move_arrow_v {
+  0% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  50% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  60% {
+    -webkit-transform: rotate(90deg) translateX(8px);
+            transform: rotate(90deg) translateX(8px);
+  }
+  70% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  80% {
+    -webkit-transform: rotate(90deg) translateX(8px);
+            transform: rotate(90deg) translateX(8px);
+  }
+  90% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+  100% {
+    -webkit-transform: rotate(90deg) translateX(0px);
+            transform: rotate(90deg) translateX(0px);
+  }
+}
+
+
+/*** Portfolio Section ***/
+
+/* Filters */
+#portfolio > .filters {
+  text-align: right;
+  padding: 0 20px;
+}
+
+.filters__title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.filters__title,
+.filters__list {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.filters__label,
+.filters__label:not(:first-child)::before {
+  color: #dcd5b2;
+}
+
+.filters__label {
+  display: inline-block;
+  position: relative;
+  margin-left: .8em;
+  cursor: pointer;
+}
+
+.filters__label.is-active {
+  color: inherit;
+}
+
+.filters__label:not(:first-child)::before {
+  content: "/";
+  margin-right: .8em;
+}
+
+/* Projects */
+
+.portfolio__project-wrapper {
+  padding: 0 10px;
+}
+
+.portfolio__project {
+  position: relative;
+  height: auto;
+  padding: 0;
+  background-color: #f7fbde;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+  overflow: hidden;
+}
+.portfolio__project__preview {
+  position: relative;
+  top: 0;
+  height: auto;
+}
+
+.portfolio__project__preview > img {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio__project__description {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 1.8em 1.3em;
+  text-align: center;
+  background: #fff;
+}
+
+.portfolio__project__name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1em;
+  margin: 0;
+  margin-bottom: .2em;
+}
+
+.portfolio__project__category {
+  font-size: .9em;
+  color: #dcd5b2;
+  margin-bottom: .6em;
+}
+
+.portfolio__project__preview,
+.portfolio__project__description {
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.portfolio__project:hover .portfolio__project__description {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.portfolio__project:hover .portfolio__project__preview {
+  -webkit-transform: translateY(-2.5em);
+          transform: translateY(-2.5em);
+}
+
+
+
+/*** Contact Section - Footer ***/
+footer {
+  padding-bottom: 2em;
+}
+
+.contact-form-wrapper {
+  padding: 0 11%;
+  z-index: 9;
+}
+
+.contact-form {
+  padding-bottom: 1em;
+}
+
+@media (max-width: 991px) {
+  footer.container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-form-wrapper {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  #contact {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .contact-form {
+    padding-right: 1.5em;
+  }
+  
+  .contact-form-wrapper {
+    padding: 0;
+  }
+}
+
+.contact-form-el {
+  position: relative;
+}
+
+.contact-form-el > .input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.3em;
+  border-bottom: 2px solid;
+}
+
+.contact-form-el > textarea {
+  resize: both;
+  min-width: 100%;
+  min-height: 10em;
+  height: 10em;
+  background: #fff; /* for usability on resize */
+}
+
+.contact-form-el > label {
+  font-size: 0.8em;
+  position: absolute;
+  top: .3em; left: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #dcd5b2;
+  pointer-events: none;
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+.contact-form-el > .input:focus + label,
+.contact-form-el > .input:valid + label {
+  -webkit-transform: translateY(-1.7em);
+          transform: translateY(-1.7em);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+.contact-form-el > .input:focus + label,
+.contact-form-el > .input:focus:valid + label {
+  color: #51e6a6;
+}
+.contact-form-el > .input:valid + label {
+  color: #dcd5b2;
+}
+
+.contact-form .global-button:hover::before {
+  -webkit-animation: move_arrow_h 1500ms ease-in infinite forwards;
+          animation: move_arrow_h 1500ms ease-in infinite forwards;
+}
+
+@-webkit-keyframes move_arrow_h {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  15% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  30% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  45% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  60% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes move_arrow_h {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  15% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  30% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  45% {
+    -webkit-transform: translateX(-6px);
+            transform: translateX(-6px);
+  }
+  60% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+
+#map {
+  padding: 0;
+  background-color: #f7fbde;
+  height: 20em;
+}
+@media (min-width: 768px) {
+  #map {
+    height: 25em;
+  }
+}
+
+footer > #credit {
+  font-size: 0.8em;
+  margin-top: 4em;
+  text-align: center;
+}
+
+.credit-link, .credit-link:hover {
+  text-decoration: underline !important;
+}
+
+.credit-link:hover {
+  color: #51e6a6;
+}</style><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/5a/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/5a/map.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/5a/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/5a/marker.js"></script><style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/5a/onion.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/5a/controls.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/32/5a/stats.js"></script></head><body>
+<header class="header container-fluid">
+  <div class="nav-toggle-wrapper">
+    <button class="nav-toggle-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+
+  </div>
+  <nav class="header__nav">
+    <ul class="nav">
+      <li class="header__nav__item is-active"><a href="#about" data-ref="about">about</a></li>
+      <li class="header__nav__item"><a href="#portfolio" data-ref="portfolio">work</a></li>
+      <li class="header__nav__item"><a href="#contact" data-ref="contact">contact</a></li>
+      <h1>Andrew Cho</h1>
+    </ul>
+  </nav>
+  <ul class="header__social-btns">
+    <li>
+      <a class="fa fa-github" href="https://github.com/andkcho" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-linkedin" href="https://www.linkedin.com/in/andrew-cho-8aa2aa121/" target="_blank"></a>
+    </li>
+    <li>
+      <a class="fa fa-instagram" href="https://www.instagram.com/andkcho/" target="_blank"></a>
+    </li>
+  </ul>
+</header>
+
+<main>
+
+  <section id="about" class="main-section">
+    <div class="wrapper">
+      <p class="about__intro">
+        <img src="https://artwalls.com.ua/image/catalog/import_yml/374/250/777/529429823_w640_h640_08_044.jpg">
+      </p>
+      <a href="#portfolio" class="global-button rotated scroll"> see my work </a>
+    </div>
+  </section>
+
+  <section id="portfolio" class="container main-section">
+    <div class="filters row">
+      <h4 class="filters__title"> <i class="fa fa-tags"></i> </h4>
+      <ul class="filters__list">
+        <li class="filters__label" data-cat="personal"> personal projects </li>
+      </ul>
+    </div>
+
+    <div class="portfolio__project-wrapper row">
+
+      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4 text-center" data-cat="fcc">
+        <a href="https://what-2-do.github.io/What2Do/" target="_blank" title="view live">
+          <div class="portfolio__project__preview">
+            <img src="https://eevu.github.io/img/quotes.svg" alt="random quotes">
+          </div>
+          <div class="portfolio__project__description">
+            <div class="info-wrapper">
+              <h3 class="portfolio__project__name">What2Do</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
+        <a href="https://jace-llc.herokuapp.com/" target="_blank" title="view live">
+          <div class="portfolio__project__preview">
+            <img src="https://eevu.github.io/img/weather.svg" alt="weather app">
+          </div>
+          <div class="portfolio__project__description">
+            <div class="info-wrapper">
+              <h3 class="portfolio__project__name">GearToPeer</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
+        <a href="https://codepen.io/eevu/full/mEyLPx" target="_blank" title="view live">
+          <div class="portfolio__project__preview">
+            <img src="https://eevu.github.io/img/wiki.svg" alt="wikipedia viewer">
+          </div>
+          <div class="portfolio__project__description">
+            <div class="info-wrapper">
+              <h3 class="portfolio__project__name">OnePunchCard</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="container">
+  <section id="contact" class="row main-section ">
+    <div class="col-xs-12 col-md-5 contact-form-wrapper">
+      <form class="contact-form">
+        <div class="contact-form-el">
+          <input type="text" id="name" class="input" required="">
+          <label for="name"> your name </label>
+        </div>
+        <div class="contact-form-el">
+          <input type="email" id="email" class="input" required="">
+          <label for="email"> your e-mail </label>
+        </div>
+        <div class="contact-form-el">
+          <textarea rows="7 " id="message" class="input" required=""></textarea>
+          <label for="message"> your message </label>
+        </div>
+        <div class="text-right">
+          <button type="submit" class="global-button"> send </button>
+        </div>
+      </form>
+    </div>
+    <div id="map" class="col-xs-12 col-md-7 " style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -149, -49);"><div style="width: 256px; height: 256px; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -256px; top: 0px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -256px; top: -256px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 0px; top: -256px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 256px; top: -256px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 256px; top: 0px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -149, -49);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 1; transform: matrix(1, 0, 0, 1, -149, -49);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i4303!3i3124!4i256!2m3!1e0!2sm!3i415114068!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy5lOmwudHxwLmM6I2ZmNmM2NzUzLHMuZTpsLnQuc3xwLmM6I2ZmZmZmZmZmLHMudDoxfHMuZTpsLnQuZnxwLmM6I2ZmNDQ0NDQ0LHMudDo1fHMuZTpnLmZ8cC5jOiNmZmZmZmZmZnxwLmw6MHxwLmc6MS4wMCxzLnQ6MnxwLnY6b2ZmLHMudDozfHMuZTpnfHAuYzojZmY1MWU2YTYscy50OjN8cy5lOmwudHxwLmM6I2ZmNmM2NzUzfHAudjpzaW1wbGlmaWVkLHMudDozfHMuZTpsLml8cC5zOi0xMDB8cC5sOjExLHMudDo0fHAudjpvZmYscy50OjZ8cC52Om9uLHMudDo2fHMuZTpnfHAuYzojZmY1MWZmYTZ8cC5sOjI3fHAuczotMTQ!4e0!5m1!5f2!23i1301875&amp;token=89340" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i4302!3i3124!4i256!2m3!1e0!2sm!3i415114068!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy5lOmwudHxwLmM6I2ZmNmM2NzUzLHMuZTpsLnQuc3xwLmM6I2ZmZmZmZmZmLHMudDoxfHMuZTpsLnQuZnxwLmM6I2ZmNDQ0NDQ0LHMudDo1fHMuZTpnLmZ8cC5jOiNmZmZmZmZmZnxwLmw6MHxwLmc6MS4wMCxzLnQ6MnxwLnY6b2ZmLHMudDozfHMuZTpnfHAuYzojZmY1MWU2YTYscy50OjN8cy5lOmwudHxwLmM6I2ZmNmM2NzUzfHAudjpzaW1wbGlmaWVkLHMudDozfHMuZTpsLml8cC5zOi0xMDB8cC5sOjExLHMudDo0fHAudjpvZmYscy50OjZ8cC52Om9uLHMudDo2fHMuZTpnfHAuYzojZmY1MWZmYTZ8cC5sOjI3fHAuczotMTQ!4e0!5m1!5f2!23i1301875&amp;token=78668" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i4302!3i3123!4i256!2m3!1e0!2sm!3i415114068!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy5lOmwudHxwLmM6I2ZmNmM2NzUzLHMuZTpsLnQuc3xwLmM6I2ZmZmZmZmZmLHMudDoxfHMuZTpsLnQuZnxwLmM6I2ZmNDQ0NDQ0LHMudDo1fHMuZTpnLmZ8cC5jOiNmZmZmZmZmZnxwLmw6MHxwLmc6MS4wMCxzLnQ6MnxwLnY6b2ZmLHMudDozfHMuZTpnfHAuYzojZmY1MWU2YTYscy50OjN8cy5lOmwudHxwLmM6I2ZmNmM2NzUzfHAudjpzaW1wbGlmaWVkLHMudDozfHMuZTpsLml8cC5zOi0xMDB8cC5sOjExLHMudDo0fHAudjpvZmYscy50OjZ8cC52Om9uLHMudDo2fHMuZTpnfHAuYzojZmY1MWZmYTZ8cC5sOjI3fHAuczotMTQ!4e0!5m1!5f2!23i1301875&amp;token=39613" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i4303!3i3123!4i256!2m3!1e0!2sm!3i415114068!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy5lOmwudHxwLmM6I2ZmNmM2NzUzLHMuZTpsLnQuc3xwLmM6I2ZmZmZmZmZmLHMudDoxfHMuZTpsLnQuZnxwLmM6I2ZmNDQ0NDQ0LHMudDo1fHMuZTpnLmZ8cC5jOiNmZmZmZmZmZnxwLmw6MHxwLmc6MS4wMCxzLnQ6MnxwLnY6b2ZmLHMudDozfHMuZTpnfHAuYzojZmY1MWU2YTYscy50OjN8cy5lOmwudHxwLmM6I2ZmNmM2NzUzfHAudjpzaW1wbGlmaWVkLHMudDozfHMuZTpsLml8cC5zOi0xMDB8cC5sOjExLHMudDo0fHAudjpvZmYscy50OjZ8cC52Om9uLHMudDo2fHMuZTpnfHAuYzojZmY1MWZmYTZ8cC5sOjI3fHAuczotMTQ!4e0!5m1!5f2!23i1301875&amp;token=50285" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><img draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i4304!3i3123!4i256!2m3!1e0!2sm!3i415114068!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy5lOmwudHxwLmM6I2ZmNmM2NzUzLHMuZTpsLnQuc3xwLmM6I2ZmZmZmZmZmLHMudDoxfHMuZTpsLnQuZnxwLmM6I2ZmNDQ0NDQ0LHMudDo1fHMuZTpnLmZ8cC5jOiNmZmZmZmZmZnxwLmw6MHxwLmc6MS4wMCxzLnQ6MnxwLnY6b2ZmLHMudDozfHMuZTpnfHAuYzojZmY1MWU2YTYscy50OjN8cy5lOmwudHxwLmM6I2ZmNmM2NzUzfHAudjpzaW1wbGlmaWVkLHMudDozfHMuZTpsLml8cC5zOi0xMDB8cC5sOjExLHMudDo0fHAudjpvZmYscy50OjZ8cC52Om9uLHMudDo2fHMuZTpnfHAuYzojZmY1MWZmYTZ8cC5sOjI3fHAuczotMTQ!4e0!5m1!5f2!23i1301875&amp;token=60957" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><img draggable="false" alt="" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i4304!3i3124!4i256!2m3!1e0!2sm!3i415114068!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcy5lOmwudHxwLmM6I2ZmNmM2NzUzLHMuZTpsLnQuc3xwLmM6I2ZmZmZmZmZmLHMudDoxfHMuZTpsLnQuZnxwLmM6I2ZmNDQ0NDQ0LHMudDo1fHMuZTpnLmZ8cC5jOiNmZmZmZmZmZnxwLmw6MHxwLmc6MS4wMCxzLnQ6MnxwLnY6b2ZmLHMudDozfHMuZTpnfHAuYzojZmY1MWU2YTYscy50OjN8cy5lOmwudHxwLmM6I2ZmNmM2NzUzfHAudjpzaW1wbGlmaWVkLHMudDozfHMuZTpsLml8cC5zOi0xMDB8cC5sOjExLHMudDo0fHAudjpvZmYscy50OjZ8cC52Om9uLHMudDo2fHMuZTpnfHAuYzojZmY1MWZmYTZ8cC5sOjI3fHAuczotMTQ!4e0!5m1!5f2!23i1301875&amp;token=100012" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0; transition-duration: 0.8s;"><p class="gm-style-pbt">Use ⌘ + scroll to zoom the map</p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"></div><div style="z-index: 4; position: absolute; left: 50%; top: 50%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div class="gmnoprint" style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0.01; left: -14px; top: -43px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area href="javascript:void(0)" log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="I'm here!" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe frameborder="0" src="about:blank" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=39.225762,9.122245&amp;z=13&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google_white5_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 124px; top: 110px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2018 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 71px; bottom: 0px; width: 121px;"><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2018 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2018 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><button draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button" style="background: none; border: 0px; margin: 10px 14px; padding: 0px; position: absolute; cursor: pointer; user-select: none; width: 25px; height: 25px; overflow: hidden; top: 0px; right: 0px;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/sv9.png" draggable="false" class="gm-fullscreen-control" style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></button><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px; display: none; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" href="https://www.google.com/maps/@39.2257618,9.122245,13z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false" controlwidth="28" controlheight="93" style="margin: 10px; user-select: none; position: absolute; bottom: 107px; right: 28px;"><div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 38px;"><div draggable="false" style="user-select: none; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;"><button draggable="false" title="Zoom in" aria-label="Zoom in" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><button draggable="false" title="Zoom out" aria-label="Zoom out" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: -15px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button></div></div><div class="gm-svpc" controlwidth="28" controlheight="28" style="background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; width: 28px; height: 28px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none; position: absolute; left: 0px; top: 0px;"><div style="position: absolute; left: 1px; top: 1px;"></div><div style="position: absolute; left: 1px; top: 1px;"><div aria-label="Street View Pegman Control" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5_hdpi.png" draggable="false" style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Pegman is on top of the Map" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5_hdpi.png" draggable="false" style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Street View Pegman Control" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/cb_scout5_hdpi.png" draggable="false" style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div title="Rotate map 90 degrees" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; display: none;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4_hdpi.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; top: 0px; cursor: pointer;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4_hdpi.png" draggable="false" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; left: 0px; top: 0px;"><div class="gm-style-mtc" style="float: left; position: relative;"><div role="button" tabindex="0" title="Show street map" aria-label="Show street map" aria-pressed="false" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; min-width: 21px;">Map</div></div><div class="gm-style-mtc" style="float: left; position: relative;"><div role="button" tabindex="0" title="" aria-label="" aria-pressed="true" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; min-width: 31px; border-left: 0px; font-weight: 500;">Styled</div></div></div></div></div></div>
+  </section>
+
+  <section id="credit" class="row">
+    
+    
+  </section>
+</footer>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async="" defer=""></script>
+<script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+<script>// initialize page
+function jsInit() {
+  // collect DOM elements
+  var navLabels = document.getElementsByClassName("header__nav__item"),
+    navToggleBtn = document.getElementsByClassName("nav-toggle-btn")[0],
+    sections = document.getElementsByClassName("main-section"),
+    prevSectionIndex,
+    filters = document.getElementsByClassName("filters__label"),
+    projects = document.getElementsByClassName("portfolio__project");
+
+  // helper callback
+  function removeClass(classString) {
+    return function(el) {
+      el.classList.remove(classString);
+    };
+  }
+  
+  function updateNavLabels() {
+    for (var i = 0; i < sections.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
+      // check which section is in viewport
+      if ((prevSectionIndex != i) && ((sections[i].getBoundingClientRect().top < window.innerHeight / 3 && sections[i].getBoundingClientRect().top >= 0) || (sections[i].getBoundingClientRect().bottom > 3 * window.innerHeight / 4 && sections[i].getBoundingClientRect().bottom < sections[i].getBoundingClientRect().height))) {
+        // update labels consequently
+        [].forEach.call(navLabels, removeClass("is-active"));
+        navLabels[i].classList.add("is-active");
+
+        prevSectionIndex = i;
+      }
+    }
+window.CP.exitedLoop(1);
+
+
+  }
+
+ function navToggle() {
+    var navToggleWrap = this.parentNode;
+    //expand nav
+    navToggleWrap.classList.toggle("expand");
+    // close nav when clicking on a link
+    [].forEach.call(navLabels, function(el) {
+      el.addEventListener("click", collapseNav);
+    });
+    
+    function collapseNav() {
+      navToggleWrap.classList.remove("expand");
+      [].forEach.call(navLabels, function(el) {
+        el.removeEventListener("click", collapseNav);
+      });
+    }
+  }
+
+  function filterProjects() {
+
+    var category = this.getAttribute("data-cat");
+
+    // update active state for category labels
+    updateFilterLabel(this);
+
+    // display or hide elements depending on selected category
+    if (!category) {
+      // display all projects if "all" is selected
+      [].forEach.call(projects, displayEl);
+    } else {
+      [].forEach.call(projects, function(el) {
+        if (el.getAttribute("data-cat") !== category) {
+          hideEl(el);
+        } else {
+          displayEl(el);
+        }
+      });
+    }
+
+    // utility
+    function updateFilterLabel(activeEl) {
+      [].forEach.call(filters, removeClass("is-active"));
+      activeEl.classList.add("is-active");
+    }
+
+    function displayEl(el) {
+      el.style.display = "block";
+    }
+
+    function hideEl(el) {
+      el.style.display = "none";
+    }
+
+  }
+
+  // display all js-dependent elements
+  var jsEl = document.getElementsByClassName("js-dis");
+  [].forEach.call(jsEl, removeClass("js-dis"));
+
+  // display current section state in nav
+  updateNavLabels();
+
+  /** event listeners: **/
+  // change current section label in nav when scrolling
+  window.addEventListener("scroll", updateNavLabels);
+  // toggle navigation when collapsed on smaller screens
+  navToggleBtn.addEventListener("click", navToggle);
+  // filtering function
+  [].forEach.call(filters, function(el) {
+    el.addEventListener("click", filterProjects)
+  });
+
+}
+
+jsInit();
+
+
+// Add Google Maps
+function initMap() {
+  var customMapType = new google.maps.StyledMapType([{
+    "featureType": "all",
+    "elementType": "labels.text",
+    "stylers": [{
+      "color": "#6c6753"
+    }]
+  }, {
+    "featureType": "all",
+    "elementType": "labels.text.stroke",
+    "stylers": [{
+      "color": "#ffffff"
+    }]
+  }, {
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+      "color": "#444444"
+    }]
+  }, {
+    "featureType": "landscape",
+    "elementType": "geometry.fill",
+    "stylers": [{
+      "color": "#ffffff"
+    }, {
+      "lightness": "0"
+    }, {
+      "gamma": "1.00"
+    }]
+  }, {
+    "featureType": "poi",
+    "elementType": "all",
+    "stylers": [{
+      "visibility": "off"
+    }]
+  }, {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [{
+      "color": "#51e6a6"
+    }]
+  }, {
+    "featureType": "road",
+    "elementType": "labels.text",
+    "stylers": [{
+      "color": "#6c6753"
+    }, {
+      "visibility": "simplified"
+    }]
+  }, {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [{
+      "saturation": "-100"
+    }, {
+      "lightness": "11"
+    }]
+  }, {
+    "featureType": "transit",
+    "elementType": "all",
+    "stylers": [{
+      "visibility": "off"
+    }]
+  }, {
+    "featureType": "water",
+    "elementType": "all",
+    "stylers": [{
+      "visibility": "on"
+    }]
+  }, {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [{
+      "color": "#51ffa6"
+    }, {
+      "lightness": "27"
+    }, {
+      "saturation": "-14"
+    }]
+  }], {
+    name: 'Styled'
+  });
+  var customMapTypeId = 'custom_style';
+
+  var latLng = {
+    lat: 39.2257618,
+    lng: 9.122245
+  };
+
+  var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: latLng,
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+    }
+  });
+
+  var marker = new google.maps.Marker({
+    position: latLng,
+    map: map,
+    title: "I'm here!"
+  });
+
+  map.mapTypes.set(customMapTypeId, customMapType);
+  map.setMapTypeId(customMapTypeId);
+
+}
+//# sourceURL=pen.js
+</script>
+</body></html>
