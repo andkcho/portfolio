@@ -310,9 +310,28 @@ div#content{
 
   /* ====================== */
 
+/* ==============section2============= */
 
+section.alternate2 {
+    height: 300px;
+    width: 100%;
+    margin-top: 10px;
+    transition: transform .5s;
+}  
 
-  
+div.username {
+    text-align: center;
+    letter-spacing: 10px;
+    margin-top: 75px;
+}
+
+div#email {
+    text-align: center;
+    letter-spacing: 8px;
+    padding-top: 3%;
+}
+
+/* ===================================== */
   
 
   
